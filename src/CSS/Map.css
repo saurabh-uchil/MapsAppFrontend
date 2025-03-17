@@ -1,0 +1,8 @@
+.mapDiv{
+    border: 2px solid rgb(53, 50, 50);
+    width: 60%;
+    margin-inline: auto;
+}
+.map{
+    width: 100%;
+}

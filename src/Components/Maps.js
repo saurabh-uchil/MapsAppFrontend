@@ -5,10 +5,11 @@ import axios from 'axios';
 import Markers from './Markers';
 
 export default function Maps() {
+  
   const [weatherStations, setWeatherStations] = useState([]);
-  const API_KEY = "*************************";
-  const MAP_ID = "************************"
-
+  const API_KEY = "**********************";
+  const MAP_ID = "***********************"
+  
   useEffect(()=>{
     //Making call to the API
     axios.get("http://localhost:8080/weatherstations").then((response)=>{

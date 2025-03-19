@@ -6,9 +6,26 @@
 .map{
     width: 100%;
 }
-
+#states{
+    width: 100px;
+    padding: 10px;
+}
+.label{
+    font-weight: 700;
+}
 @media screen and (max-width: 767px) {
     .mapDiv{
         width: 100%;
+        margin-top: 20px;
+    }
+    #states{
+        
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mapDiv{
+        width:80%;
+        margin-top: 20px;
     }
 }

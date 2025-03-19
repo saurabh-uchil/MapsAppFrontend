@@ -1,10 +1,14 @@
 import "./App.css"
 import Map from "./Components/Maps"
+import Navbar from "./Components/Navbar"
 export default function App() {
   return (
-    <div className="App">
-      This is App
-      <Map />
+    <div>
+      <Navbar />
+      <div className="content">
+        <Map />
     </div>
+    </div>
+    
   )
 }

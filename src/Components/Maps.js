@@ -35,11 +35,11 @@ export default function Maps() {
   return (
     <>
       <div className='filterDiv'>
-      <select name="cars" id="cars" onChange={handleChange}>
+       <label className="label">Filter By:</label>  
+      <select name="states" id="states" onChange={handleChange}>
         <option value="">All States</option>
         {option}
       </select>
-      {filterText}
       </div>
       <div className='mapDiv'>
        <APIProvider apiKey={API_KEY}>

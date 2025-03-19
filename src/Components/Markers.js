@@ -15,6 +15,7 @@ export default function Markers({data, filterText}) {
     let myArray;
     if(filterText !==""){
         myArray = data.filter((location)=>{
+
            return location.state.toLowerCase() === filterText.toLowerCase();
         });
       }else{

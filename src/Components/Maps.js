@@ -7,8 +7,9 @@ import Markers from './Markers';
 export default function Maps() {
   
   const [weatherStations, setWeatherStations] = useState([]);
-  const API_KEY = "**********************";
-  const MAP_ID = "***********************"
+  const [filterText, setFilterText] = useState("");
+  const API_KEY = "************************";
+  const MAP_ID = "********************"
   
   useEffect(()=>{
     //Making call to the API
@@ -18,11 +19,28 @@ export default function Maps() {
       console.log(error);
       
      });
-   }, [])
+   }, []);
    
+
+   const handleChange = (e)=>{
+    setFilterText(e.target.value);
+   }
+
+   const states = ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "ACT", "NT"];
+   const option = states.map((state, i) => {
+    return <option key = {i} value={state}>{state}</option>
+   });
+
 
   return (
     <>
+      <div className='filterDiv'>
+      <select name="cars" id="cars" onChange={handleChange}>
+        <option value="">All States</option>
+        {option}
+      </select>
+      {filterText}
+      </div>
       <div className='mapDiv'>
        <APIProvider apiKey={API_KEY}>
         <Map
@@ -33,7 +51,7 @@ export default function Maps() {
           disableDefaultUI={true}
           mapId={MAP_ID}
        >
-        <Markers data={weatherStations}/>
+        <Markers data={weatherStations} filterText={filterText}/>
        </Map>
       </APIProvider>
     </div>

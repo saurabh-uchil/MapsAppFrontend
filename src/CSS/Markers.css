@@ -1,8 +1,14 @@
-.info{
+.popup{
+    background: rgb(218, 64, 64);
     border: 2px solid grey;
-    font-weight: 500;
+    border-radius: 5px;
     padding: 10px;
+}
+.info{
+    padding: 10px;
+    font-weight: 500;
     width: 200px;
+    color: #fff;
 }
 .title{
     font-weight: bold;

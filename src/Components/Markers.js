@@ -11,7 +11,9 @@ export default function Markers({data, filterText}) {
     const handleClick = (location) =>{
         setSelectedLocation({...location});
     }
-    
+    const handleCloseCLick = () =>{
+        setSelectedLocation({});
+    }
     let myArray;
     if(filterText !==""){
         myArray = data.filter((location)=>{
@@ -32,7 +34,7 @@ export default function Markers({data, filterText}) {
          position={{lat:location.latitude, lng: location.longitude}}>
        <Pin background={'#FF851B'} glyphColor={'#000'} borderColor={'#000'}/>
        {selectedLocation && selectedLocation.id === location.id && 
-       <InfoWindow className='popup' position={{lat:location.latitude, lng: location.longitude}}>
+       <InfoWindow  onCloseClick={handleCloseCLick} className='popup' position={{lat:location.latitude, lng: location.longitude}}>
         
          <div className='info'>
              <p><span className='title'>Station:</span> {location.name}</p>
